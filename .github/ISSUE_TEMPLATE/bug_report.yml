@@ -1,0 +1,50 @@
+name: "Bug Report"
+description: "バグ報告"
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: "バグの説明"
+      description: "何が起きているか"
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: "再現手順"
+      value: |
+        1.
+        2.
+        3.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: "期待される動作"
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: "実際の動作"
+    validations:
+      required: true
+  - type: dropdown
+    id: priority
+    attributes:
+      label: "Priority"
+      options:
+        - "P0 (Critical)"
+        - "P1 (High)"
+        - "P2 (Medium)"
+        - "P3 (Low)"
+    validations:
+      required: true
+  - type: input
+    id: estimate
+    attributes:
+      label: "Estimate (SP)"
+      placeholder: "例: 2"

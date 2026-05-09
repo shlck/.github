@@ -1,0 +1,79 @@
+name: "User Story / Task"
+description: "作業単位 (Level 2 Issue) - PRと1対1で紐付く"
+title: "[Task] "
+labels: ["task"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## User Story / Task
+        このIssueはUser Story/Taskです。1つのPRに対応します。
+  - type: input
+    id: parent_epic
+    attributes:
+      label: "親Epic"
+      description: "紐付くEpicの番号 (例: #10)"
+      placeholder: "#"
+  - type: textarea
+    id: user_story
+    attributes:
+      label: "User Story"
+      description: "As a ... I want ... So that ..."
+      placeholder: "As a [role], I want [feature], so that [benefit]."
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: "Acceptance Criteria"
+      description: "完了条件"
+      value: |
+        - [ ]
+    validations:
+      required: true
+  - type: dropdown
+    id: task_type
+    attributes:
+      label: "Task Type"
+      options:
+        - "Feature"
+        - "Bug"
+        - "Debt"
+        - "Management"
+    validations:
+      required: true
+  - type: dropdown
+    id: priority
+    attributes:
+      label: "Priority"
+      options:
+        - "P0 (Critical)"
+        - "P1 (High)"
+        - "P2 (Medium)"
+        - "P3 (Low)"
+    validations:
+      required: true
+  - type: dropdown
+    id: risk_level
+    attributes:
+      label: "Risk Level"
+      options:
+        - "Low"
+        - "Mid"
+        - "High"
+    validations:
+      required: true
+  - type: input
+    id: estimate
+    attributes:
+      label: "Estimate (SP)"
+      description: "ストーリーポイント"
+      placeholder: "例: 3"
+    validations:
+      required: true
+  - type: input
+    id: due_date
+    attributes:
+      label: "Due Date"
+      description: "期日 (YYYY-MM-DD形式)"
+      placeholder: "2025-12-31"

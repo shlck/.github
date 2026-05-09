@@ -1,0 +1,58 @@
+name: "Epic"
+description: "大きな機能単位 (Level 1 Issue)"
+title: "[Epic] "
+labels: ["epic"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Epic について
+        このIssueはEpic（巨大な機能単位）です。本文内のTasklistで子Issueを管理します。
+  - type: input
+    id: goal
+    attributes:
+      label: "ゴール"
+      description: "このEpicで達成したいこと"
+    validations:
+      required: true
+  - type: textarea
+    id: tasklist
+    attributes:
+      label: "Tasklist (子Issue)"
+      description: "子Issueを追加してください。例: [ ] #123"
+      value: |
+        ### Tasks
+        - [ ]
+  - type: dropdown
+    id: priority
+    attributes:
+      label: "Priority"
+      options:
+        - "P0 (Critical)"
+        - "P1 (High)"
+        - "P2 (Medium)"
+        - "P3 (Low)"
+    validations:
+      required: true
+  - type: dropdown
+    id: risk_level
+    attributes:
+      label: "Risk Level"
+      options:
+        - "Low"
+        - "Mid"
+        - "High"
+    validations:
+      required: true
+  - type: input
+    id: estimate
+    attributes:
+      label: "Estimate (SP)"
+      description: "ストーリーポイント (合計)"
+      placeholder: "例: 13"
+  - type: input
+    id: due_date
+    attributes:
+      label: "Due Date"
+      description: "期日 (YYYY-MM-DD形式)"
+      placeholder: "2025-12-31"
